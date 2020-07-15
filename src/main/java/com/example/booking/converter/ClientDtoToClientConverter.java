@@ -15,7 +15,7 @@ public class ClientDtoToClientConverter implements Converter<ClientDto, Client> 
         client.setBirthday(clientDto.getBirthday());
         client.setName(clientDto.getName());
         client.setSurname(clientDto.getSurname());
-        client.setId(clientDto.getId());
+        client.setClientId(clientDto.getId());
         client.setSlots(clientDto.getSlots());
         return client;
     }

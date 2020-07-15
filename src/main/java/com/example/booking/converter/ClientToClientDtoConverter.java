@@ -10,7 +10,7 @@ public class ClientToClientDtoConverter implements Converter<Client, ClientDto> 
     @Override
     public ClientDto convert(Client client) {
         ClientDto target = new ClientDto();
-        target.setId(client.getId());
+        target.setId(client.getClientId());
         target.setBirthday(client.getBirthday());
         target.setName(client.getName());
         target.setSurname(client.getSurname());

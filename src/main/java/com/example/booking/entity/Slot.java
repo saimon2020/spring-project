@@ -14,7 +14,7 @@ import java.time.LocalDate;
 public class Slot {
     @Id
     @Column(name = "id")
-    private int id;
+    private int slotId;
 
     @Column(name = "booking_date")
     private LocalDate bookingDate;
@@ -30,12 +30,12 @@ public class Slot {
     @JoinColumn(name = "room_number")
     private Room room;
 
-    public int getId() {
-        return id;
+    public int getSlotId() {
+        return slotId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setSlotId(int id) {
+        this.slotId = id;
     }
 
     public LocalDate getBookingDate() {
@@ -66,7 +66,7 @@ public class Slot {
         return room;
     }
 
-    public void setRoom(Room room_number) {
+    public void setRoom(Room room) {
         this.room = room;
     }
 }

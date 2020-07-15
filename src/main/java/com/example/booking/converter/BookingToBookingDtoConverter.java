@@ -10,10 +10,10 @@ public class BookingToBookingDtoConverter implements Converter<Booking, BookingD
     @Override
     public BookingDto convert(Booking booking) {
         BookingDto target = new BookingDto();
-        target.setId(booking.getId());
+        target.setId(booking.getBookingId());
         target.setPaid(booking.isPaid());
         target.setPrice(booking.getPrice());
-        target.setSlot(booking.getSlot());
+        target.setSlotId(booking.getSlot().getSlotId());
         return target;
     }
 }

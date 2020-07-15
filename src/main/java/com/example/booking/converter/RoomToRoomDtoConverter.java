@@ -10,7 +10,7 @@ public class RoomToRoomDtoConverter implements Converter<Room, RoomDto> {
     @Override
     public RoomDto convert(Room room) {
         RoomDto target = new RoomDto();
-        target.setNumber(room.getNumber());
+        target.setNumber(room.getRoomNumber());
         target.setType(room.getType());
         target.setSlots(room.getSlots());
         return target;

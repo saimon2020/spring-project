@@ -3,7 +3,7 @@ package com.example.booking.dto;
 import com.example.booking.entity.Slot;
 
 public class BookingDto {
-    private Slot slot;
+    private int slotId;
     private boolean paid;
     private int price;
     private int id;
@@ -16,12 +16,12 @@ public class BookingDto {
         this.id = id;
     }
 
-    public Slot getSlot() {
-        return slot;
+    public int getSlotId() {
+        return slotId;
     }
 
-    public void setSlot(Slot slot) {
-        this.slot = slot;
+    public void setSlotId(int slotId) {
+        this.slotId = slotId;
     }
 
     public boolean isPaid() {

@@ -7,7 +7,7 @@ public class FeedbackDto {
     private int id;
     private Rate rate;
     private String comment;
-    private Booking booking;
+    private int bookingId;
 
     public int getId() {
         return id;
@@ -33,12 +33,12 @@ public class FeedbackDto {
         this.comment = comment;
     }
 
-    public Booking getBooking() {
-        return booking;
+    public int getBookingId() {
+        return bookingId;
     }
 
-    public void setBooking(Booking booking) {
-        this.booking = booking;
+    public void setBookingId(int bookingId) {
+        this.bookingId = bookingId;
     }
 
 }

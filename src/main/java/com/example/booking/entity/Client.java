@@ -15,7 +15,7 @@ import java.util.List;
 public class Client {
     @Id
     @Column(name = "id")
-    private int id;
+    private int clientId;
 
     @Column(name = "name")
     private String name;
@@ -29,8 +29,11 @@ public class Client {
     @Column(name = "birthday")
     private LocalDate birthday;
 
-    @Column(name = "isMale")
-    private boolean isMale;
+    @Column(name = "male")
+    private boolean male;
+
+    /*@Column(name = "password")
+    private boolean password;*/
 
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private List<Slot> slots = new ArrayList<>();
@@ -43,12 +46,12 @@ public class Client {
         this.slots = slots;
     }
 
-    public int getId() {
-        return id;
+    public int getClientId() {
+        return clientId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setClientId(int id) {
+        this.clientId = id;
     }
 
     public String getName() {
@@ -67,7 +70,6 @@ public class Client {
         this.surname = surname;
     }
 
-
     public String getEmail() {
         return email;
     }
@@ -85,11 +87,19 @@ public class Client {
     }
 
     public boolean isMale() {
-        return isMale;
+        return male;
     }
 
     public void setMale(boolean male) {
-        isMale = male;
+        this.male = male;
     }
+
+   /* public boolean isPassword() {
+        return password;
+    }
+
+    public void setPassword(boolean password) {
+        this.password = password;
+    }*/
 
 }

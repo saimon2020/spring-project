@@ -18,7 +18,7 @@ import java.util.List;
 public class Room {
     @Id
     @Column(name = "number")
-    private int number;
+    private int roomNumber;
 
     @Column(name = "type")
     @Enumerated(EnumType.STRING)
@@ -27,12 +27,12 @@ public class Room {
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
     private List<Slot> slots = new ArrayList<>();
 
-    public int getNumber() {
-        return number;
+    public int getRoomNumber() {
+        return roomNumber;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setRoomNumber(int number) {
+        this.roomNumber = number;
     }
 
     public RoomType getType() {

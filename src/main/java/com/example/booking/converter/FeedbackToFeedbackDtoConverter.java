@@ -8,9 +8,9 @@ public class FeedbackToFeedbackDtoConverter implements Converter<Feedback, Feedb
     @Override
     public FeedbackDto convert(Feedback feedback) {
         FeedbackDto target = new FeedbackDto();
-        target.setBooking(feedback.getBooking());
+        target.setBookingId(feedback.getBooking().getBookingId());
         target.setComment(feedback.getComment());
-        target.setId(feedback.getId());
+        target.setId(feedback.getFeedbackId());
         target.setRate(feedback.getRate());
         return target;
     }

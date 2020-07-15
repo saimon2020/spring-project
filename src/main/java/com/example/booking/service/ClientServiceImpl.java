@@ -45,7 +45,7 @@ public class ClientServiceImpl implements ClientService {
     @Override
     public ClientDto updateClient(ClientDto clientDto) {
         Client client = clientRepository.findById(clientDto.getId()).orElseThrow(() -> new ClientException("Client is not found"));
-        client.setId(clientDto.getId());
+        client.setClientId(clientDto.getId());
         client.setName(clientDto.getName());
         client.setSurname(clientDto.getSurname());
         client.setBirthday(clientDto.getBirthday());

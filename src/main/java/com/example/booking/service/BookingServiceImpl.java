@@ -45,7 +45,7 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public BookingDto updateBooking(BookingDto bookingDto) {
         Booking booking = bookingRepository.findById(bookingDto.getId()).orElseThrow(() -> new BookingException("Booking is not found"));
-        booking.setId(bookingDto.getId());
+        booking.setBookingId(bookingDto.getId());
 
         return conversionService.convert(bookingRepository.save(booking), BookingDto.class);
     }

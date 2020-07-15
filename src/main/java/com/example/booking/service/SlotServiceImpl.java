@@ -3,6 +3,8 @@ package com.example.booking.service;
 import com.example.booking.dto.SlotDto;
 import com.example.booking.entity.Slot;
 import com.example.booking.exception.SlotException;
+import com.example.booking.repository.ClientRepository;
+import com.example.booking.repository.RoomRepository;
 import com.example.booking.repository.SlotRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.ConversionService;
@@ -18,11 +20,15 @@ public class SlotServiceImpl implements SlotService {
 
     private final SlotRepository slotRepository;
     private final ConversionService conversionService;
+    private final RoomRepository roomRepository;
+    private final ClientRepository clientRepository;
 
     @Autowired
-    public SlotServiceImpl(SlotRepository slotRepository, ConversionService conversionService) {
+    public SlotServiceImpl(SlotRepository slotRepository, ConversionService conversionService, RoomRepository roomRepository, ClientRepository clientRepository) {
         this.slotRepository = slotRepository;
         this.conversionService = conversionService;
+        this.roomRepository = roomRepository;
+        this.clientRepository = clientRepository;
     }
 
     @Override
@@ -46,11 +52,11 @@ public class SlotServiceImpl implements SlotService {
     @Override
     public SlotDto updateSlot(SlotDto slotDto) {
         Slot slot = slotRepository.findById(slotDto.getId()).orElseThrow(() -> new SlotException("Slot is not found"));
-        slot.setId(slotDto.getId());
+        slot.setSlotId(slotDto.getId());
         slot.setBooked(slotDto.isBooked());
         slot.setBookingDate(slotDto.getBookingDate());
-        slot.setClient(slotDto.getClient());
-        slot.setRoom(slotDto.getRoom());
+        slot.setRoom(roomRepository.findByRoomNumber(slotDto.getRoomNumber()));
+        slot.setClient(clientRepository.findByClientId(slotDto.getClientId()));
         return conversionService.convert(slotRepository.save(slot), SlotDto.class);
     }
 

@@ -10,11 +10,11 @@ public class SlotToSlotDtoConverter implements Converter<Slot, SlotDto> {
     @Override
     public SlotDto convert(Slot slot) {
         SlotDto target = new SlotDto();
-        target.setId(slot.getId());
+        target.setId(slot.getSlotId());
         target.setBooked(slot.isBooked());
         target.setBookingDate(slot.getBookingDate());
-        target.setClient(slot.getClient());
-        target.setRoom(slot.getRoom());
+        target.setClientId(slot.getClient().getClientId());
+        target.setRoomNumber(slot.getRoom().getRoomNumber());
         return target;
     }
 

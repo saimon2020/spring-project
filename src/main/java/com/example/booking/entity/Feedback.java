@@ -17,7 +17,7 @@ import javax.persistence.Table;
 public class Feedback {
     @Id
     @Column(name = "id")
-    private int id;
+    private int feedbackId;
 
     @Column(name = "rate")
     @Enumerated(EnumType.STRING)
@@ -30,12 +30,12 @@ public class Feedback {
     @JoinColumn(name = "booking_id")
     private Booking booking;
 
-    public int getId() {
-        return id;
+    public int getFeedbackId() {
+        return feedbackId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setFeedbackId(int id) {
+        this.feedbackId = id;
     }
 
     public Rate getRate() {

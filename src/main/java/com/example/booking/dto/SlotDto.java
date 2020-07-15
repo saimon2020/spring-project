@@ -9,8 +9,8 @@ public class SlotDto {
     private int id;
     private LocalDate bookingDate;
     private boolean isBooked;
-    private Room room;
-    private Client client;
+    private int roomNumber;
+    private int clientId;
 
     public int getId() {
         return id;
@@ -36,20 +36,19 @@ public class SlotDto {
         isBooked = booked;
     }
 
-    public Room getRoom() {
-        return room;
+    public int getRoomNumber() {
+        return roomNumber;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
-    public Client getClient() {
-        return client;
+    public int getClientId() {
+        return clientId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
     }
-
 }

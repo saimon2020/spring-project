@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Booking {
     @Id
     @Column(name = "id")
-    private int id;
+    private int bookingId;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "slot_id")
@@ -25,12 +25,12 @@ public class Booking {
     @Column(name = "paid")
     private boolean paid;
 
-    public int getId() {
-        return id;
+    public int getBookingId() {
+        return bookingId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBookingId(int id) {
+        this.bookingId = id;
     }
 
     public Slot getSlot() {

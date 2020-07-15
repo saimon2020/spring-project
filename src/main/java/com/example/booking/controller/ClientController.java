@@ -23,17 +23,17 @@ public class ClientController {
     }
 
     @PostMapping
-    public ClientDto createRoom(@RequestBody ClientDto roomDto) {
-        return clientService.createClient(roomDto);
+    public ClientDto createClient(@RequestBody ClientDto clientDto) {
+        return clientService.createClient(clientDto);
     }
 
     @PutMapping
-    public ClientDto updateRoom(@RequestBody ClientDto roomDto) {
-        return clientService.updateClient(roomDto);
+    public ClientDto updateClient(@RequestBody ClientDto clientDto) {
+        return clientService.updateClient(clientDto);
     }
 
     @DeleteMapping
-    public void deleteRoom(@PathParam("id") Integer id) {
+    public void deleteClient(@PathParam("id") Integer id) {
         clientService.deleteClient(id);
     }
 }

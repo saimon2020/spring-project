@@ -46,7 +46,7 @@ public class RoomServiceImpl implements RoomService {
     @Override
     public RoomDto updateRoom(RoomDto roomDto) {
         Room room = roomRepository.findById(roomDto.getNumber()).orElseThrow(() -> new RoomException("Room is not found"));
-        room.setNumber(roomDto.getNumber());
+        room.setRoomNumber(roomDto.getNumber());
         room.setType(roomDto.getType());
         return conversionService.convert(roomRepository.save(room), RoomDto.class);
     }

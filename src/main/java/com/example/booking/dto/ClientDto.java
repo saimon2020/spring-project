@@ -12,7 +12,7 @@ public class ClientDto {
     private String surname;
     private String email;
     private LocalDate birthday;
-    private boolean isMale;
+    private boolean male;
 
     private List<Slot> slots = new ArrayList<>();
 
@@ -65,11 +65,11 @@ public class ClientDto {
     }
 
     public boolean isMale() {
-        return isMale;
+        return male;
     }
 
     public void setMale(boolean male) {
-        isMale = male;
+        this.male = male;
     }
 
 }

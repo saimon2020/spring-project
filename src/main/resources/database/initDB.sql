@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS clients
     name  VARCHAR(255) NOT NULL ,
     surname  VARCHAR(255) NOT NULL ,
     email VARCHAR(255) NOT NULL ,
-    isMale BOOLEAN NOT NULL ,
+    male BOOLEAN NOT NULL ,
     birthday DATE NOT NULL
 );
 CREATE TABLE IF NOT EXISTS slots
